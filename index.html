@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Jojo ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="hearts-container" aria-hidden="true"></div>
+
+    <main class="container">
+        <section class="card" id="welcome-screen">
+            <div class="big-heart">💗</div>
+            <p class="eyebrow">A LITTLE SURPRISE FOR YOU</p>
+            <h1>Something Special...</h1>
+            <p class="intro">
+                A special day deserves a special surprise.
+                Let's make your birthday beautiful! 🎂
+            </p>
+
+            <form id="birthday-form">
+                <label for="name">What should we call you? 💕</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    value="Jojo"
+                    required
+                    maxlength="40"
+                >
+
+                <label for="dob">Your date of birth 🎂</label>
+                <input type="date" id="dob" required>
+
+                <p class="hint">Your birthday surprise is waiting...</p>
+                <button type="submit">Reveal My Surprise 💖</button>
+            </form>
+        </section>
+
+        <section class="card surprise" id="surprise" hidden>
+            <p class="eyebrow">TODAY IS ALL ABOUT YOU ✨</p>
+            <h1>Happy Birthday, <span id="display-name">Jojo</span>! 🎉</h1>
+            <p class="age-message">
+                Another year of life, love and blessings.
+                You are <strong><span id="age"></span></strong> years young! ❤️
+            </p>
+
+            <div class="photo-frame">
+                <img
+                    id="birthday-photo"
+                    src="images/jojo.jpeg"
+                    alt="A special birthday photo"
+                >
+            </div>
+            <p id="photo-hint" class="hint" hidden>
+                Add your photo to the images folder and name it jojo.jpg.
+            </p>
+
+            <h2>For You, With Love 💌</h2>
+            <p class="birthday-message">
+                Happy Birthday, Jojo! ❤️ May your new year of life bring
+                you peace, happiness, good health and endless blessings.
+                May your dreams grow bigger, your smile shine brighter,
+                and may you always find reasons to be grateful.
+                May God guide your steps, protect you and open beautiful
+                doors for you. You deserve a day filled with love and joy.
+                Enjoy your special day! 🎂💗
+            </p>
+
+            <div class="song-box">
+                <h2>Your Birthday Song 🎶</h2>
+                <p>Birthday Blessings — Joseph Christian</p>
+                <audio id="birthday-song" controls preload="none">
+                    <source src="audio/birthday-song.ogg" type="audio/ogg">
+                    Your browser does not support audio playback.
+                </audio>
+                <p id="song-error" class="hint" role="status" hidden>
+                    This audio file could not be played. Try an MP3 copy of the song.
+                </p>
+                <p class="hint">
+                    Press play to listen to your birthday song.
+                </p>
+            </div>
+
+            <p class="closing">Keep smiling. Keep shining. Keep being you. 💖</p>
+            <button type="button" id="back-btn" class="secondary-button">
+                Replay Surprise ↻
+            </button>
+        </section>
+    </main>
+
+    <footer>Made with ❤️ for a special birthday</footer>
+</body>
+</html>

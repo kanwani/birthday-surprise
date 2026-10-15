@@ -1,0 +1,281 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #ff4f93;
+    --light-pink: #ffe3ef;
+    --dark-purple: #4d2345;
+    --text: #513747;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 24px 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: linear-gradient(135deg, #fff0f6, #f4e5ff, #ffe4ed);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    width: 100%;
+    padding: 32px 26px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(255, 79, 147, 0.2);
+    border-radius: 24px;
+    box-shadow: 0 15px 45px rgba(130, 55, 100, 0.14);
+    text-align: center;
+    animation: appear 0.7s ease both;
+}
+
+.big-heart {
+    font-size: 65px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.eyebrow {
+    margin: 12px 0;
+    color: var(--pink);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+h1 {
+    margin: 12px 0;
+    color: var(--pink);
+    font-size: clamp(28px, 6vw, 40px);
+    line-height: 1.2;
+}
+
+h2 {
+    margin: 25px 0 12px;
+    color: var(--pink);
+    font-size: 22px;
+}
+
+.intro,
+.age-message,
+.birthday-message {
+    line-height: 1.8;
+}
+
+.intro {
+    margin: 16px auto 25px;
+    max-width: 430px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+}
+
+label {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px;
+    border: 1px solid #edc6d8;
+    border-radius: 12px;
+    background: #fffafd;
+    color: var(--text);
+    font: inherit;
+}
+
+input:focus {
+    outline: 2px solid var(--pink);
+    border-color: transparent;
+}
+
+button {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 12px;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #ff4f93, #d95de8);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(217, 93, 232, 0.25);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--dark-purple);
+    outline-offset: 3px;
+}
+
+.hint {
+    color: #987b8d;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.surprise {
+    margin-top: 10px;
+}
+
+.age-message {
+    margin-bottom: 22px;
+}
+
+.photo-frame {
+    width: min(100%, 320px);
+    margin: 22px auto;
+    padding: 7px;
+    background: linear-gradient(135deg, #ff80b5, #d9a0ff);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(130, 55, 100, 0.18);
+}
+
+.photo-frame img {
+    display: block;
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.birthday-message {
+    margin: 0 auto;
+    max-width: 470px;
+    font-size: 16px;
+}
+
+.song-box {
+    margin-top: 26px;
+    padding: 18px;
+    background: #fff2f8;
+    border-radius: 18px;
+}
+
+.song-box h2 {
+    margin-top: 0;
+}
+
+.song-box audio {
+    display: block;
+    width: 100%;
+    margin: 15px auto;
+}
+
+.closing {
+    margin-top: 25px;
+    color: var(--pink);
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.secondary-button {
+    background: #704b78;
+}
+
+footer {
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+    color: #927187;
+    font-size: 12px;
+    text-align: center;
+}
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+    z-index: 0;
+    pointer-events: none;
+    animation: float-up linear forwards;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+}
+
+@keyframes float-up {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    to {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 16px 10px;
+    }
+
+    .card {
+        padding: 26px 18px;
+        border-radius: 20px;
+    }
+
+    .birthday-message {
+        font-size: 15px;
+    }
+
+    .photo-frame img {
+        max-height: 340px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
